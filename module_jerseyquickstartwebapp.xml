@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_jerseyquickstartwebapp" default="compile.module.jerseyquickstartwebapp">
+  <dirname property="module.jerseyquickstartwebapp.basedir" file="${ant.file.module_jerseyquickstartwebapp}"/>
+  
+  <property name="module.jdk.home.jerseyquickstartwebapp" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.jerseyquickstartwebapp" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.jerseyquickstartwebapp" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.jerseyquickstartwebapp" value="-encoding UTF-8 -source 7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="jerseyquickstartwebapp.output.dir" value="//target/classes"/>
+  <property name="jerseyquickstartwebapp.testoutput.dir" value="//target/test-classes"/>
+  
+  <path id="jerseyquickstartwebapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="jerseyquickstartwebapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.jerseyquickstartwebapp}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+  </path>
+  
+  <path id="jerseyquickstartwebapp.runtime.production.module.classpath">
+    <pathelement location="${jerseyquickstartwebapp.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+  </path>
+  
+  <path id="jerseyquickstartwebapp.module.classpath">
+    <path refid="${module.jdk.classpath.jerseyquickstartwebapp}"/>
+    <pathelement location="${jerseyquickstartwebapp.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+  </path>
+  
+  <path id="jerseyquickstartwebapp.runtime.module.classpath">
+    <pathelement location="${jerseyquickstartwebapp.testoutput.dir}"/>
+    <pathelement location="${jerseyquickstartwebapp.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.jerseyquickstartwebapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.jerseyquickstartwebapp">
+    <patternset refid="excluded.from.module.jerseyquickstartwebapp"/>
+  </patternset>
+  
+  <path id="jerseyquickstartwebapp.module.sourcepath">
+    <dirset dir="/">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.jerseyquickstartwebapp" depends="compile.module.jerseyquickstartwebapp.production,compile.module.jerseyquickstartwebapp.tests" description="Compile module jerseyquickstartwebapp"/>
+  
+  <target name="compile.module.jerseyquickstartwebapp.production" depends="register.custom.compilers" description="Compile module jerseyquickstartwebapp; production classes">
+    <mkdir dir="${jerseyquickstartwebapp.output.dir}"/>
+    <javac2 destdir="${jerseyquickstartwebapp.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.jerseyquickstartwebapp}/javac">
+      <compilerarg line="${compiler.args.jerseyquickstartwebapp}"/>
+      <bootclasspath refid="jerseyquickstartwebapp.module.bootclasspath"/>
+      <classpath refid="jerseyquickstartwebapp.module.production.classpath"/>
+      <src refid="jerseyquickstartwebapp.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.jerseyquickstartwebapp"/>
+    </javac2>
+    
+    <copy todir="${jerseyquickstartwebapp.output.dir}">
+      <fileset dir="//src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="//src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.jerseyquickstartwebapp.tests" depends="register.custom.compilers,compile.module.jerseyquickstartwebapp.production" description="compile module jerseyquickstartwebapp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.jerseyquickstartwebapp" description="cleanup module">
+    <delete dir="${jerseyquickstartwebapp.output.dir}"/>
+    <delete dir="${jerseyquickstartwebapp.testoutput.dir}"/>
+  </target>
+</project>

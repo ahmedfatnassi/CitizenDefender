@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="citizendefender" default="all">
+  
+  
+  <property file="jerseyquickstartwebapp.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.klib"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.inject:javax.inject:1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/inject/javax.inject/1/javax.inject-1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.servlet:servlet-api:2.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.validation:validation-api:1.1.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.eclipse.persistence:org.eclipse.persistence.asm:2.6.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.eclipse.persistence:org.eclipse.persistence.core:2.6.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/containers/jersey-container-servlet-core/2.27/jersey-container-servlet-core-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-client/2.27/jersey-client-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-common/2.27/jersey-common-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-server/2.27/jersey-server-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/ext/jersey-entity-filtering/2.27/jersey-entity-filtering-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/inject/jersey-hk2/2.27/jersey-hk2-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-jaxb/2.27/jersey-media-jaxb-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.media:jersey-media-moxy:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-moxy/2.27/jersey-media-moxy-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish.jersey.media:jersey-media-multipart:2.27.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-multipart/2.27/jersey-media-multipart-2.27.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.glassfish:javax.json:1.0.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jvnet.mimepull:mimepull:1.9.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_postgresql:postgresql:9.1-901-1.jdbc4.classpath">
+    <pathelement location="${path.variable.maven_repository}/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_citizendefender.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.citizendefender, clean.artifact.citizendefender:war_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.citizendefender" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.citizendefender:war" value="${basedir}/target"/>
+    <property name="artifact.output.citizendefender:war_exploded" value="${basedir}/target/jersey-quickstart -webapp"/>
+    <property name="artifact.output.unnamed" value="${basedir}/out/artifacts/unnamed"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.jersey-quickstart -webapp.war" value="${artifacts.temp.dir}/jersey-quickstart -webapp.war"/>
+    <property name="temp.jar.path.quickstart.war" value="${artifacts.temp.dir}/quickstart.war"/>
+  </target>
+  
+  <target name="clean.artifact.citizendefender:war_exploded" description="clean CitizenDefender:war exploded artifact output">
+    <delete dir="${artifact.output.citizendefender:war_exploded}"/>
+  </target>
+  
+  <target name="artifact.citizendefender:war" depends="init.artifacts, artifact.citizendefender:war_exploded" description="Build &#39;CitizenDefender:war&#39; artifact">
+    <property name="artifact.temp.output.citizendefender:war" value="${artifacts.temp.dir}/CitizenDefender_war"/>
+    <mkdir dir="${artifact.temp.output.citizendefender:war}"/>
+    <zip destfile="${temp.jar.path.jersey-quickstart -webapp.war}">
+      <zipfileset dir="${artifact.output.citizendefender:war_exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.jersey-quickstart -webapp.war}" tofile="${artifact.temp.output.citizendefender:war}/jersey-quickstart -webapp.war"/>
+  </target>
+  
+  <target name="artifact.citizendefender:war_exploded" depends="init.artifacts, compile.module.citizendefender" description="Build &#39;CitizenDefender:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}"/>
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.citizendefender:war_exploded}/WEB-INF/classes">
+      <fileset dir="${citizendefender.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/containers/jersey-container-servlet-core/2.27/jersey-container-servlet-core-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-container-servlet-core-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javax.inject-2.5.0-b42.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-common/2.27/jersey-common-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-common-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javax.annotation-api-1.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/osgi-resource-locator-1.0.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-server/2.27/jersey-server-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-server-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/core/jersey-client/2.27/jersey-client-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-client-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-jaxb/2.27/jersey-media-jaxb-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-media-jaxb-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javax.ws.rs-api-2.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/inject/jersey-hk2/2.27/jersey-hk2-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-hk2-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/hk2-locator-2.5.0-b42.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/aopalliance-repackaged-2.5.0-b42.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/hk2-api-2.5.0-b42.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/inject/javax.inject/1/javax.inject-1.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javax.inject-1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/hk2-utils-2.5.0-b42.jar"/>
+    <copy file="${path.variable.maven_repository}/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javassist-3.22.0-CR2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-moxy/2.27/jersey-media-moxy-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-media-moxy-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/ext/jersey-entity-filtering/2.27/jersey-entity-filtering-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-entity-filtering-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/org.eclipse.persistence.moxy-2.6.4.jar"/>
+    <copy file="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/org.eclipse.persistence.core-2.6.4.jar"/>
+    <copy file="${path.variable.maven_repository}/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/org.eclipse.persistence.asm-2.6.4.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/javax.json-1.0.4.jar"/>
+    <copy file="${path.variable.maven_repository}/org/glassfish/jersey/media/jersey-media-multipart/2.27/jersey-media-multipart-2.27.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/jersey-media-multipart-2.27.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/mimepull-1.9.6.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/servlet-api-2.5.jar"/>
+    <copy file="${path.variable.maven_repository}/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/lib/postgresql-9.1-901-1.jdbc4.jar"/>
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/jersey-quickstart -webapp/META-INF/MANIFEST.MF" tofile="${artifact.output.citizendefender:war_exploded}/META-INF/MANIFEST.MF"/>
+    <copy todir="${artifact.output.citizendefender:war_exploded}">
+      <fileset dir="${basedir}/src/main/webapp"/>
+    </copy>
+    <mkdir dir="${artifact.output.citizendefender:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.citizendefender:war_exploded}/WEB-INF/web.xml"/>
+  </target>
+  
+  <target name="artifact.unnamed" depends="init.artifacts" description="Build &#39;unnamed&#39; artifact">
+    <property name="artifact.temp.output.unnamed" value="${artifacts.temp.dir}/unnamed"/>
+    <mkdir dir="${artifact.temp.output.unnamed}"/>
+    <zip destfile="${temp.jar.path.quickstart.war}"/>
+    <copy file="${temp.jar.path.quickstart.war}" tofile="${artifact.temp.output.unnamed}/quickstart.war"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.citizendefender:war, artifact.citizendefender:war_exploded, artifact.unnamed" description="Build all artifacts">
+    <mkdir dir="${artifact.output.citizendefender:war}"/>
+    <copy todir="${artifact.output.citizendefender:war}">
+      <fileset dir="${artifact.temp.output.citizendefender:war}"/>
+    </copy>
+    <mkdir dir="${artifact.output.unnamed}"/>
+    <copy todir="${artifact.output.unnamed}">
+      <fileset dir="${artifact.temp.output.unnamed}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

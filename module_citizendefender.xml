@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_citizendefender" default="compile.module.citizendefender">
+  <dirname property="module.citizendefender.basedir" file="${ant.file.module_citizendefender}"/>
+  
+  <property name="module.jdk.home.citizendefender" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.citizendefender" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.citizendefender" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.citizendefender" value="-encoding UTF-8 -source 7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="citizendefender.output.dir" value="${module.citizendefender.basedir}/target/classes"/>
+  <property name="citizendefender.testoutput.dir" value="${module.citizendefender.basedir}/target/test-classes"/>
+  
+  <path id="citizendefender.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="citizendefender.module.production.classpath">
+    <path refid="${module.jdk.classpath.citizendefender}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-moxy:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.27.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.core:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.asm:2.6.4.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-multipart:2.27.classpath"/>
+    <path refid="library.maven:_org.jvnet.mimepull:mimepull:1.9.6.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_postgresql:postgresql:9.1-901-1.jdbc4.classpath"/>
+  </path>
+  
+  <path id="citizendefender.runtime.production.module.classpath">
+    <pathelement location="${citizendefender.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-moxy:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.27.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.core:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.asm:2.6.4.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-multipart:2.27.classpath"/>
+    <path refid="library.maven:_org.jvnet.mimepull:mimepull:1.9.6.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_postgresql:postgresql:9.1-901-1.jdbc4.classpath"/>
+  </path>
+  
+  <path id="citizendefender.module.classpath">
+    <path refid="${module.jdk.classpath.citizendefender}"/>
+    <pathelement location="${citizendefender.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-moxy:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.27.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.core:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.asm:2.6.4.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-multipart:2.27.classpath"/>
+    <path refid="library.maven:_org.jvnet.mimepull:mimepull:1.9.6.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_postgresql:postgresql:9.1-901-1.jdbc4.classpath"/>
+  </path>
+  
+  <path id="citizendefender.runtime.module.classpath">
+    <pathelement location="${citizendefender.testoutput.dir}"/>
+    <pathelement location="${citizendefender.output.dir}"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-servlet-core:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.27.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.27.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.inject:jersey-hk2:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b42.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.22.0-cr2.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-moxy:2.27.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.27.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.moxy:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.core:2.6.4.classpath"/>
+    <path refid="library.maven:_org.eclipse.persistence:org.eclipse.persistence.asm:2.6.4.classpath"/>
+    <path refid="library.maven:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-multipart:2.27.classpath"/>
+    <path refid="library.maven:_org.jvnet.mimepull:mimepull:1.9.6.classpath"/>
+    <path refid="library.maven:_javax.servlet:servlet-api:2.5.classpath"/>
+    <path refid="library.maven:_postgresql:postgresql:9.1-901-1.jdbc4.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.citizendefender">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.citizendefender">
+    <patternset refid="excluded.from.module.citizendefender"/>
+  </patternset>
+  
+  <path id="citizendefender.module.sourcepath">
+    <dirset dir="${module.citizendefender.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.citizendefender" depends="compile.module.citizendefender.production,compile.module.citizendefender.tests" description="Compile module CitizenDefender"/>
+  
+  <target name="compile.module.citizendefender.production" depends="register.custom.compilers" description="Compile module CitizenDefender; production classes">
+    <mkdir dir="${citizendefender.output.dir}"/>
+    <javac2 destdir="${citizendefender.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.citizendefender}/javac">
+      <compilerarg line="${compiler.args.citizendefender}"/>
+      <bootclasspath refid="citizendefender.module.bootclasspath"/>
+      <classpath refid="citizendefender.module.production.classpath"/>
+      <src refid="citizendefender.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.citizendefender"/>
+    </javac2>
+    
+    <copy todir="${citizendefender.output.dir}">
+      <fileset dir="${module.citizendefender.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.citizendefender.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.citizendefender.tests" depends="register.custom.compilers,compile.module.citizendefender.production" description="compile module CitizenDefender; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.citizendefender" description="cleanup module">
+    <delete dir="${citizendefender.output.dir}"/>
+    <delete dir="${citizendefender.testoutput.dir}"/>
+  </target>
+</project>
