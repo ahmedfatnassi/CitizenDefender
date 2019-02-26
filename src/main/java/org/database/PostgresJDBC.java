@@ -9,6 +9,10 @@ public void  connection(){
     System.out.println("-------- PostgreSQL "
             + "JDBC Connection Testing ------------");
 
+
+
+
+    //  you should first create app db by terminal psql
     try {
 
         Class.forName("org.postgresql.Driver");
@@ -29,8 +33,8 @@ public void  connection(){
     try {
 
         connection = DriverManager.getConnection(
-                "jdbc:postgresql://127.0.0.1:5432/testdb", "root",
-                "58372696");
+                "jdbc:postgresql://localhost:5432/app",  "ahmedfatnassi",
+                "0000");
 
     } catch (SQLException e) {
 
