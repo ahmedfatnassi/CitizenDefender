@@ -20,7 +20,7 @@ import javax.ws.rs.ext.Provider;
 import org.glassfish.jersey.internal.util.Base64;
 
 
-@Provider
+//@Provider
 public class AuthenticationFilter implements javax.ws.rs.container.ContainerRequestFilter
 {
 
