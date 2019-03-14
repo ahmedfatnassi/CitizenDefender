@@ -5,7 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.models.User;
+
+import org.models.PostEntity;
 
 import javax.annotation.security.DenyAll;
 import javax.annotation.security.RolesAllowed;
@@ -25,7 +26,7 @@ public class UserRessources {
     @DenyAll
     @GET
     @Path("ahmed")
-    public ArrayList<User> getIt() {
+    public PostEntity getIt() {
 
        /* Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
@@ -34,21 +35,27 @@ public class UserRessources {
         */EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "local" );
         System.out.println("hellooeew ");
         EntityManager entitymanager = emfactory.createEntityManager( );
-        entitymanager.getTransaction( ).begin( );
+        System.out.println("hellooeew ");
 
-        User user = new User("ahmed","fatnassi","ahmedfatnassi23@gmail.com","3216464","0721492");
-      User user1= new User();
-      ArrayList<User> ahmeds = new ArrayList<>(2);
-      ahmeds.add(user);
-      ahmeds.add(user1);
-        entitymanager.persist(user);
-        entitymanager.getTransaction( ).commit( );
+        entitymanager.getTransaction( ).begin( );
+        System.out.println("hellooeew ");
+
+
+        PostEntity post = new PostEntity();
+        post.setTitle("zertyuiop");
+        post.setDescription("azertyuiopkjhbvfgyu");
+        post.setId(1);
+        post.setUserid(1);
+        entitymanager.persist(post);
+        System.out.println("persist works ");
+        entitymanager.getTransaction().commit();
+        System.out.println("persist works ");
 
         /*User user2 = entitymanager.find( User.class,1);
         System.out.println("yyyyyyyyyyeaahhh "+user2.getEmail());
         */entitymanager.close( );
         emfactory.close( );
-      return ahmeds;
+      return post;
     }
 
 /*@POST

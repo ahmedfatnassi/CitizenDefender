@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="org.models.AttachementEntity">
+        <table name="attachement" schema="public" catalog="citizendefender"/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="-1"/>
+            </id>
+            <basic name="attachementType">
+                <column name="attachement_type" length="40"/>
+            </basic>
+            <basic name="idPost">
+                <column name="id_post" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="idComment">
+                <column name="id_comment" nullable="false" precision="-1"/>
+            </basic>
+            <basic name="title">
+                <column name="title" nullable="false" length="60"/>
+            </basic>
+            <basic name="description">
+                <column name="description" nullable="false" length="200"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

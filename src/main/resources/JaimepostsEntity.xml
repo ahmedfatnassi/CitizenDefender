@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="org.models.JaimepostsEntity">
+        <table name="jaimeposts" schema="public" catalog="citizendefender"/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="-1"/>
+            </id>
+            <many-to-one name="userByUserId" optional="true" target-entity="org.models.UserEntity">
+                <join-column name="user_id" nullable="false" referenced-column-name="id"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

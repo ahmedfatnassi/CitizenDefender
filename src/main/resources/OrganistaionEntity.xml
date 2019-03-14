@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="org.models.OrganistaionEntity">
+        <table name="organistaion" schema="public" catalog="citizendefender"/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="-1"/>
+            </id>
+            <basic name="type">
+                <column name="type" length="40"/>
+            </basic>
+            <basic name="logopath">
+                <column name="logopath" nullable="false" length="70"/>
+            </basic>
+            <basic name="apropos">
+                <column name="apropos" nullable="false" length="1000"/>
+            </basic>
+            <basic name="photocorverpath">
+                <column name="photocorverpath" nullable="false" length="100"/>
+            </basic>
+            <basic name="name">
+                <column name="name" length="60"/>
+            </basic>
+            <basic name="address">
+                <column name="address" nullable="false" length="80"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
