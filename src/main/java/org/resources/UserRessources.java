@@ -28,28 +28,22 @@ public class UserRessources {
     @Path("ahmed")
     public PostEntity getIt() {
 
-       /* Configuration configuration = new Configuration().configure("/hibernate.cfg.xml");
-        ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-        SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        */EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "local" );
-        System.out.println("hellooeew ");
+        // just test of creation an post in webservice
+
+
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "local" );
         EntityManager entitymanager = emfactory.createEntityManager( );
-        System.out.println("hellooeew ");
 
         entitymanager.getTransaction( ).begin( );
-        System.out.println("hellooeew ");
 
 
         PostEntity post = new PostEntity();
         post.setTitle("zertyuiop");
-        post.setDescription("azertyuiopkjhbvfgyu");
-        post.setId(1);
-        post.setUserid(1);
+        post.setContent("azertyuiopkjhbvfgyu");
+
+
         entitymanager.persist(post);
-        System.out.println("persist works ");
         entitymanager.getTransaction().commit();
-        System.out.println("persist works ");
 
         /*User user2 = entitymanager.find( User.class,1);
         System.out.println("yyyyyyyyyyeaahhh "+user2.getEmail());

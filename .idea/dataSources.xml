@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@localhost" uuid="a398e873-e06b-455c-b632-d0c46ea0e78d">
+    <data-source source="LOCAL" name="citizendefender@localhost" uuid="a398e873-e06b-455c-b632-d0c46ea0e78d">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/citizendefender</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="local/Hibernate" uuid="22cc3ad5-54a0-4f6f-b868-be33c7d139b9">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/ahmed/IdeaProjects/CitizenDefender/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/citizendefender</jdbc-url>
     </data-source>
   </component>
 </project>

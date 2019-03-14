@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+        version="2.0">
+
+    <entity class="org.models.post">
+        <table name="post" schema="public" catalog="citizendefender"/>
+        <attributes>
+            <id name="id">
+                <column name="id" precision="-1"/>
+            </id>
+            <basic name="title">
+                <column name="title" length="50"/>
+            </basic>
+            <basic name="description">
+                <column name="description" nullable="false" length="500"/>
+            </basic>
+            <basic name="userid">
+                <column name="userid" nullable="false" precision="-1"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
